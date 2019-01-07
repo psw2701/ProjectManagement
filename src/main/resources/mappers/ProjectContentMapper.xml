@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yi.project.dao.ProjectContentDao">
+	<insert id="insert" parameterType="content">
+		insert into content (no, content) 
+		values(#{no},#{content})
+	</insert>
+	
+	<select id="selectByNo" resultType="content">
+		select * from content 
+		where no=#{no}
+	</select>
+	
+	<delete id="delete" parameterType="content">
+		delete from ProjectManagement 
+		where no = #{no}
+	</delete>
+	
+	<update id="update">
+		UPDATE content 
+		SET content=#{content}
+		WHERE no=#{no}
+	</update>
+</mapper>
